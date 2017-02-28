@@ -14,11 +14,22 @@ class ThumbnailList extends Component {
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/photos?_page=2&_limit=50')
       .then(res => {
-        this.setState({ photos: res.data });
+        const data = addHTTPS(res.data);
+        this.setState({ photos: data });
       })
       .catch(err => {
         console.log(err);
       });
+
+    // Return thumbnailUrls with https instead of http
+    function addHTTPS(arr) {
+      for(var i = 0; i < arr.length; i++) {
+        var url = arr[i].thumbnailUrl;
+        arr[i].thumbnailUrl = url.substring(0,4) + "s" + url.substring(4);
+      }
+
+      return arr;
+    }
   }
 
   render() {
@@ -35,6 +46,7 @@ class ThumbnailList extends Component {
       <Thumbnail
         key={ "thumbnail_" + id }
         thumbnailUrl={ photo.thumbnailUrl }
+        title={ photo.title }
       />
     ));
   }

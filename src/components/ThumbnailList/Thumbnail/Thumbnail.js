@@ -4,7 +4,7 @@ class Thumbnail extends Component {
   render() {
     return (
       <div>
-        <img src={this.props.thumbnailUrl} role="presentation" />
+        <img src={ this.props.thumbnailUrl } alt={ this.props.title } />
       </div>
     );
   }
