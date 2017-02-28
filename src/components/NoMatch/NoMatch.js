@@ -5,7 +5,8 @@ class NoMatch extends Component {
   render() {
     return (
       <div>
-        <h2>You tripped and fell into the Ditch of 404</h2>
+        <h2>Oh No!</h2>
+        <p>You tripped and fell into the Ditch of 404</p>
         <Link to="/">Get to safety!</Link>
       </div>
     );

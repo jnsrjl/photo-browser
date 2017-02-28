@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 
 import App from './App';
 import About from './components/About/About';
@@ -12,7 +12,7 @@ import './index.css';
 render((
   <Router history={ browserHistory }>
     <Route path="/" component={ App }>
-      <IndexRoute component={ ThumbnailList } />
+      <IndexRedirect to="/photos" />
       <Route path="about" component={ About } />
       <Route path="photos" component={ ThumbnailList } />
       <Route path="*" component={ NoMatch } />
