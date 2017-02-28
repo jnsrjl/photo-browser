@@ -47,6 +47,7 @@ class ThumbnailList extends Component {
         key={ "thumbnail_" + id }
         thumbnailUrl={ photo.thumbnailUrl }
         title={ photo.title }
+        id={ photo.id }
       />
     ));
   }

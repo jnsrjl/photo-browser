@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Thumbnail extends Component {
   render() {
     return (
       <div>
-        <img src={ this.props.thumbnailUrl } alt={ this.props.title } />
+        <Link to={ "/photos/" + this.props.id }>
+          <img src={ this.props.thumbnailUrl } alt={ this.props.title } />
+        </Link>
       </div>
     );
   }
