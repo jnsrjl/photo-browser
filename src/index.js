@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './App';
 import About from './components/About/About';
 import ThumbnailList from './components/ThumbnailList/ThumbnailList';
+import NoMatch from './components/NoMatch/NoMatch';
 
 import './index.css';
 
@@ -14,6 +15,7 @@ render((
       <IndexRoute component={ ThumbnailList } />
       <Route path="about" component={ About } />
       <Route path="photos" component={ ThumbnailList } />
+      <Route path="*" component={ NoMatch } />
     </Route>
   </Router>
   ),
