@@ -12,7 +12,7 @@ class PhotoView extends Component {
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/photos/' + this.props.params.id)
       .then(res => {
-        // Make url https
+        // Make urls https
         res.data.url = res.data.url.substring(0,4) + "s" + res.data.url.substring(4);
         this.setState({ photo: res.data });
       })

@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import Thumbnail from './Thumbnail/Thumbnail';
 
+import './ThumbnailList.css';
+
 class ThumbnailList extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +36,7 @@ class ThumbnailList extends Component {
 
   render() {
     return (
-      <div>
-        <h2>ThumbnailList</h2>
+      <div className="ThumbnailList">
         { this.renderThumbnails() }
       </div>
     );
