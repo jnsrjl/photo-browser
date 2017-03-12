@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import  axios from 'axios';
+import axios from 'axios';
+
+import './PhotoView.css';
 
 class PhotoView extends Component {
   constructor(props) {
@@ -53,12 +55,16 @@ class PhotoView extends Component {
   render() {
     return (
       <div>
-        <img src={this.state.photo.url} alt={this.state.photo.title} />
-        <ul>
-          <li>{ this.state.photo.title }</li>
-          <li>by { this.state.user.name }</li>
-          <li>in album { this.state.album.title }</li>
-        </ul>
+        <div className="PhotoContainer">
+          <img src={this.state.photo.url} alt={this.state.photo.title} />
+        </div>
+        <div className="PhotoDetails">
+          <ul>
+            <li><strong>{ this.state.photo.title }</strong></li>
+            <li>by <strong>{ this.state.user.name }</strong></li>
+            <li>in album <strong>{ this.state.album.title }</strong></li>
+          </ul>
+        </div>
       </div>
     );
   }
